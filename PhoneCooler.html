@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueWow X76 Ice Cooling Fan</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0073ff, #40bfff);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .product-images {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .product-images img.main {
+      width: 300px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .product-images img.main:hover {
+      transform: scale(1.05);
+    }
+
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .thumbnails img {
+      width: 60px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .thumbnails img:hover {
+      border-color: #0073ff;
+    }
+
+    .product-details {
+      flex: 1 1 300px;
+      background: #FFB76B;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .product-details h1 {
+      color: #0073ff;
+      font-size: 1.8rem;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      color: #28a745;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .description {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .selectors {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    select, input[type="number"] {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #0073ff;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fd3;
+    }
+
+    .tabs {
+      margin-top: 20px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .tab-buttons button {
+      flex: 1;
+      background: #CAE9F5;
+      color: #0073ff;
+      border: none;
+      padding: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .tab-buttons button.active {
+      border-bottom: 3px solid #0073ff;
+      color: #000;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 10px 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0073ff;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>BlueWow X76 Ice Cooling Fan</header>
+
+  <div class="container">
+    <div class="product-images">
+      <img src="bluewow.jpg" alt="BlueWow X76" class="main" id="mainImage">
+    </div>
+
+    <div class="product-details">
+      <h1>BlueWow X76 Ice Cooling Fan</h1>
+      <div class="price"> ₱1,799-₱2,179</div>
+      <p class="description">
+        The BlueWow X76 offers powerful ice cooling for your phone during gaming sessions. 
+        Featuring RGB lighting, magnetic attachment, and 3 adjustable speed levels for optimal control.
+      </p>
+
+      <div class="selectors">
+        <select>
+          <option>Standard</option>
+          <option>Pro</option>
+          <option>Ultra</option>
+        </select>
+        <input type="number" value="1" min="10">
+      </div>
+
+      <button>Add to Cart 🛒</button>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="active" onclick="openTab(event, 'desc')">Description</button>
+          <button onclick="openTab(event, 'reviews')">Reviews</button>
+        </div>
+        <div id="desc" class="tab-content active">
+          <p>✅ RGB cooling lights <br>
+             ✅ Powerful magnetic grip <br>
+             ✅ 3 speed settings <br>
+             ✅ USB-C powered</p>
+        </div>
+        <div id="reviews" class="tab-content">
+          <p>⭐️⭐️⭐️⭐️⭐️ “Amazing cooling performance for long gaming sessions!”<br>
+             ⭐️⭐️⭐️⭐️ “Very quiet and works perfectly with my Android.”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 JoeStore  | High Quality Guarantee | Official Warranty
+  </footer>
+
+  <script>
+    function changeImage(img) {
+      document.getElementById('mainImage').src = img.src;
+    }
+
+    function openTab(evt, tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+
+      const buttons = document.querySelectorAll('.tab-buttons button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
